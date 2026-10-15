@@ -1,12 +1,9 @@
-name: Deploy Project 3 Portfolio to GitHub Pages
+name: Deploy All Lexicon Projects to GitHub Pages
 
 on:
   push:
     branches:
       - main
-    paths:
-      - 'project-3-portfolio/**'
-      - '.github/workflows/deploy-portfolio.yml'
   workflow_dispatch:
 
 permissions:
@@ -29,16 +26,37 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-          cache-dependency-path: 'project-3-portfolio/package-lock.json'
 
-      - name: Install dependencies
-        run: npm ci
-        working-directory: project-3-portfolio
+      - name: Build Project 4 Dashboard
+        run: |
+          cd project-4-dashboard
+          npm ci
+          npm run build
 
-      - name: Build portfolio
-        run: npm run build
-        working-directory: project-3-portfolio
+      - name: Build Project 3 Portfolio
+        run: |
+          cd project-3-portfolio
+          npm ci
+          npm run build
+
+      - name: Assemble Combined Site
+        run: |
+          mkdir -p site
+
+          # Root: Project 4 Developer Dashboard
+          cp -R project-4-dashboard/dist/* site/
+
+          # Project 1: CV Website
+          mkdir -p site/project1-cv
+          cp -R project1-cv/* site/project1-cv/
+
+          # Project 2: Business Website
+          mkdir -p site/project-2-business
+          cp -R project-2-business/* site/project-2-business/
+
+          # Project 3: Portfolio Hub
+          mkdir -p site/project-3-portfolio
+          cp -R project-3-portfolio/dist/* site/project-3-portfolio/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -46,7 +64,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'project-3-portfolio/dist'
+          path: 'site'
 
   deploy:
     environment:

@@ -1,40 +1,18 @@
 import { useState, useEffect } from 'react';
 import projectData from './data.json';
+import cvHistory from './cvData';
+import Navbar from './components/Navbar';
+import HeroIntro from './components/HeroIntro';
+import ProjectFilters from './components/ProjectFilters';
+import ProjectCard from './components/ProjectCard';
+import CvAccordion from './components/CvAccordion';
+import SkillsSection from './components/SkillsSection';
+import Footer from './components/Footer';
 import './App.css';
-
-// Extracting CV data into an array makes it easy for React to manage the accordion states
-const cvHistory = [
-  {
-    id: 1,
-    role: "Software Developer & IT Student",
-    date: "Skåne County, Sweden (Present)",
-    details: "Completing an IT engineering program while building real-world web applications. Focus on reliable backend systems for payments, tax calculations, and delivery routing."
-  },
-  {
-    id: 2,
-    role: "Founder & Director | EQ Labs",
-    date: "Huntsville, AL & Landskrona, Sweden (1999 – Present)",
-    details: "Built a music company from the ground up, expanding from three US locations to a flagship studio and school in Sweden. Manage operations, teach youth workshops, and build internal web tools to handle bookings and scheduling."
-  },
-  {
-    id: 3,
-    role: "Foreman & Logistics | Asplundh",
-    date: "Huntsville, AL (2006 – 2011)",
-    details: "Started driving trucks, moved up to Foreman. Managed work crews, daily business operations, and equipment routing for city utility contracts."
-  },
-  {
-    id: 4,
-    role: "Delivery Driver | Just In Time Cartage",
-    date: "US & Canada (2002 – 2006)",
-    details: "Drove box trucks for time-sensitive freight across state lines and into Canada. Gained hands-on experience with strict deadlines and international route planning."
-  }
-];
 
 function App() {
   const [activeTab, setActiveTab] = useState('projects');
   const [filter, setFilter] = useState('All');
-  
-  // New States for Interactive Features
   const [searchQuery, setSearchQuery] = useState('');
   const [openAccordion, setOpenAccordion] = useState(1); // Keeps the first item open by default
 
@@ -52,13 +30,31 @@ function App() {
   // Combined Filter and Live Search Logic
   const filteredProjects = projectData.filter(project => {
     const matchesFilter = filter === 'All' || project.type.includes(filter);
-    const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          project.description.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesFilter && matchesSearch;
+    const query = searchQuery.trim().toLowerCase();
+    if (!query) return matchesFilter;
+
+    const matchesTitle = project.title.toLowerCase().includes(query);
+    const matchesDesc = project.description.toLowerCase().includes(query);
+    const matchesTags = project.tags && project.tags.some(tag => tag.toLowerCase().includes(query));
+    
+    return matchesFilter && (matchesTitle || matchesDesc || matchesTags);
   });
 
   const toggleAccordion = (id) => {
-    setOpenAccordion(openAccordion === id ? null : id);
+    if (openAccordion === 'all') {
+      setOpenAccordion(id);
+    } else {
+      setOpenAccordion(openAccordion === id ? null : id);
+    }
+  };
+
+  const toggleAllAccordions = () => {
+    setOpenAccordion(openAccordion === 'all' ? null : 'all');
+  };
+
+  const handleResetFilters = () => {
+    setFilter('All');
+    setSearchQuery('');
   };
 
   return (
@@ -66,72 +62,51 @@ function App() {
       <div className="dashboard-container">
         
         {/* NAVIGATION BAR */}
-        <nav className="dashboard-nav">
-          <h2>Cory Parham | Developer Dashboard</h2>
-          <div className="nav-buttons">
-            <button 
-              className={activeTab === 'projects' ? 'active-tab' : 'tab'} 
-              onClick={() => setActiveTab('projects')}
-            >
-              Project Showcase
-            </button>
-            <button 
-              className={activeTab === 'cv' ? 'active-tab' : 'tab'} 
-              onClick={() => setActiveTab('cv')}
-            >
-              Interactive CV
-            </button>
-            <button 
-              className="theme-toggle"
-              onClick={() => setIsDarkMode(!isDarkMode)}
-            >
-              {isDarkMode ? '☀️ Light' : '🌙 Dark'}
-            </button>
-          </div>
-        </nav>
+        <Navbar
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
+          isDarkMode={isDarkMode}
+          onToggleTheme={() => setIsDarkMode(!isDarkMode)}
+        />
+
+        {/* HERO INTRO & PROFILE BANNER */}
+        <HeroIntro />
 
         {/* DASHBOARD CONTENT AREA */}
         <main className="dashboard-content">
           
           {/* PROJECTS VIEW */}
           {activeTab === 'projects' && (
-            <section className="showcase">
-              <div className="filter-header">
-                <h3>My Work</h3>
-                
-                {/* Search Bar */}
-                <input 
-                  type="text" 
-                  placeholder="Search projects..." 
-                  className="search-bar"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-
-                <div className="filter-buttons">
-                  <button onClick={() => setFilter('All')} className={filter === 'All' ? 'active-filter' : ''}>All</button>
-                  <button onClick={() => setFilter('HTML/CSS')} className={filter === 'HTML/CSS' ? 'active-filter' : ''}>HTML/CSS</button>
-                  <button onClick={() => setFilter('React')} className={filter === 'React' ? 'active-filter' : ''}>React</button>
-                  <button onClick={() => setFilter('Business Systems')} className={filter === 'Business Systems' ? 'active-filter' : ''}>Business Systems</button>
-                </div>
-              </div>
+            <section className="showcase" aria-label="Project Showcase">
+              <ProjectFilters
+                searchQuery={searchQuery}
+                onSearchChange={setSearchQuery}
+                filter={filter}
+                onFilterChange={setFilter}
+                totalCount={projectData.length}
+                matchCount={filteredProjects.length}
+                onReset={handleResetFilters}
+              />
 
               <div className="project-grid">
                 {filteredProjects.length > 0 ? (
                   filteredProjects.map((project) => (
-                    <div key={project.id} className="project-card">
-                      <span className="project-type">{project.type}</span>
-                      <h4>{project.title}</h4>
-                      <p>{project.description}</p>
-                      {project.link !== "#" && (
-                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="view-button">
-                          View Live Project
-                        </a>
-                      )}
-                    </div>
+                    <ProjectCard key={project.id} project={project} />
                   ))
                 ) : (
-                  <p style={{ color: "#6b7280" }}>No projects match your search.</p>
+                  <div className="empty-state">
+                    <span className="empty-state-icon">🔍</span>
+                    <h4>No matching projects found</h4>
+                    <p>No projects match &ldquo;{searchQuery}&rdquo; under the &ldquo;{filter}&rdquo; filter.</p>
+                    <button 
+                      type="button" 
+                      onClick={handleResetFilters} 
+                      className="reset-text-button"
+                      style={{ marginTop: '12px' }}
+                    >
+                      Clear search &amp; filters
+                    </button>
+                  </div>
                 )}
               </div>
             </section>
@@ -139,40 +114,25 @@ function App() {
 
           {/* CV VIEW (Accordion) */}
           {activeTab === 'cv' && (
-            <section className="cv-view">
-              <div className="filter-header">
-                <h3>Professional Timeline</h3>
-                <a href="mailto:coryparham80@gmail.com" className="view-button" style={{ padding: "8px 16px" }}>Contact Me</a>
-              </div>
-              
-              <div className="accordion-timeline">
-                {cvHistory.map((job) => (
-                  <div key={job.id} className="accordion-item">
-                    <button 
-                      className="accordion-header" 
-                      onClick={() => toggleAccordion(job.id)}
-                    >
-                      <div>
-                        <h4>{job.role}</h4>
-                        <span className="timeline-date">{job.date}</span>
-                      </div>
-                      <span className="accordion-icon">
-                        {openAccordion === job.id ? '−' : '+'}
-                      </span>
-                    </button>
-                    
-                    {openAccordion === job.id && (
-                      <div className="accordion-body">
-                        <p>{job.details}</p>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
+            <section className="cv-view" aria-label="Curriculum Vitae">
+              <CvAccordion
+                items={cvHistory}
+                openId={openAccordion}
+                onToggle={toggleAccordion}
+                onToggleAll={toggleAllAccordions}
+              />
             </section>
+          )}
+
+          {/* SKILLS & STACK VIEW */}
+          {activeTab === 'skills' && (
+            <SkillsSection />
           )}
           
         </main>
+
+        {/* FOOTER */}
+        <Footer />
       </div>
     </div>
   );
