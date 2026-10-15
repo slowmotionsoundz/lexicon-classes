@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact EQ Labs or book a session online. Production rooms in Landskrona, Sweden and Huntsville, Alabama with remote mixing and mastering worldwide.">
+    <meta name="theme-color" content="#121212">
+    <title>Contact &amp; Booking | EQ Labs - Professional Recording Studio</title>
+    <!-- Preload LCP hero image for fast Lighthouse rendering -->
+    <link rel="preload" as="image" href="images/hero-bg.webp">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎛️</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="logo">
+            <h1>EQ Labs</h1>
+        </div>
+        <!-- Hamburger Menu Icon -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li class="mobile-only"><a href="contact.html" class="btn-book-mobile">Book a Session</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn-book header-book-btn">Book a Session</a>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="contact-hero">
+            <div class="hero-content">
+                <h2>Connect with EQ Labs</h2>
+                <p class="hero-tagline">Transatlantic Recording &bull; Remote Mixing &bull; Mastering</p>
+                <p class="hero-subtext">Book dedicated tracking time in Sweden or Alabama, or transmit your stems for commercial mix and master delivery worldwide.</p>
+                <div class="contact-badges">
+                    <span class="contact-badge">⚡ Response &lt; 24h</span>
+                    <span class="contact-badge">🇸🇪 Landskrona Suite</span>
+                    <span class="contact-badge">🇺🇸 Huntsville Lab</span>
+                    <span class="contact-badge">🌐 Global Stem Delivery</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK DIRECT CONTACT CARDS -->
+        <section class="contact-info-section">
+            <div class="contact-cards-grid">
+                <!-- Card 1: Sweden Studio -->
+                <div class="contact-card fade-in">
+                    <div class="contact-card-icon">🇸🇪</div>
+                    <h3>Studio A &bull; Landskrona</h3>
+                    <span class="contact-card-role">Acoustic Suite &amp; Mastering</span>
+                    <p><strong>📍 Address:</strong> Skeppsbron 14, 261 35 Landskrona, Sweden</p>
+                    <p><strong>🕒 Hours:</strong> Mon – Fri: 09:00 – 20:00 CET</p>
+                    <p><strong>📞 Phone:</strong> <a href="tel:+4641855020" style="color: var(--accent-light);">+46 (0) 418 550 20</a></p>
+                    <div class="contact-card-links">
+                        <a href="mailto:sweden@eqla.se" class="contact-card-link">✉️ sweden@eqla.se</a>
+                        <a href="https://instagram.com/eqlabseu" target="_blank" rel="noopener noreferrer" class="contact-card-link">📸 @eqlabseu</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: USA Studio -->
+                <div class="contact-card fade-in">
+                    <div class="contact-card-icon">🇺🇸</div>
+                    <h3>Studio B &bull; Huntsville</h3>
+                    <span class="contact-card-role">Tracking &amp; Analog Synth Lab</span>
+                    <p><strong>📍 Address:</strong> 100 Jefferson St N, Huntsville, AL 35801</p>
+                    <p><strong>🕒 Hours:</strong> Mon – Fri: 10:00 – 21:00 CT</p>
+                    <p><strong>📞 Phone:</strong> <a href="tel:+12565550192" style="color: var(--accent-light);">+1 (256) 555-0192</a></p>
+                    <div class="contact-card-links">
+                        <a href="mailto:hsv@eqla.se" class="contact-card-link">✉️ hsv@eqla.se</a>
+                        <a href="https://instagram.com/eqlabshsv" target="_blank" rel="noopener noreferrer" class="contact-card-link">📸 @eqlabshsv</a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Remote Production & Management -->
+                <div class="contact-card fade-in">
+                    <div class="contact-card-icon">🌐</div>
+                    <h3>Remote Engineering</h3>
+                    <span class="contact-card-role">Worldwide Stems &amp; Sync</span>
+                    <p><strong>⚡ Turnaround:</strong> Mix revisions within 3–5 days</p>
+                    <p><strong>🔒 Security:</strong> Encrypted transatlantic stem transfers</p>
+                    <p><strong>🎧 Specs:</strong> 32-bit / 192kHz, Dolby Atmos compatible</p>
+                    <div class="contact-card-links">
+                        <a href="mailto:contact@eqla.se" class="contact-card-link">✉️ contact@eqla.se</a>
+                        <a href="https://eqla.se" target="_blank" rel="noopener noreferrer" class="contact-card-link">🌐 eqla.se</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN SECTION: BOOKING FORM + GOOGLE MAP -->
+        <section class="contact-main-section">
+            <div class="contact-main-grid">
+                
+                <!-- Left: Booking Form -->
+                <div class="form-box fade-in">
+                    <div class="form-header">
+                        <h2>Request Studio Time</h2>
+                        <p>Tell us about your upcoming project, stems, or release schedule. We will review your materials and respond with availability and quote details within 24 hours.</p>
+                    </div>
+
+                    <!-- Dynamic Alert Message (Success or Error Summary) -->
+                    <div id="formAlert" class="form-alert" role="alert" aria-live="polite"></div>
+
+                    <form id="bookingForm" novalidate>
+                        <!-- Row 1: Name & Email -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Artist / Band Name <span class="required-mark" aria-hidden="true">*</span></label>
+                                <input type="text" id="fullName" class="form-control" placeholder="e.g. Luna &amp; The Waves" autocomplete="name" aria-required="true" aria-describedby="fullName-error">
+                                <span class="error-msg" id="fullName-error" role="alert"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required-mark" aria-hidden="true">*</span></label>
+                                <input type="email" id="email" class="form-control" placeholder="e.g. artist@recordlabel.com" autocomplete="email" aria-required="true" aria-describedby="email-error">
+                                <span class="error-msg" id="email-error" role="alert"></span>
+                            </div>
+                        </div>
+
+                        <!-- Row 2: Phone & Location -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone / WhatsApp <span class="optional-hint">(Optional)</span></label>
+                                <input type="tel" id="phone" class="form-control" placeholder="+46... or +1..." autocomplete="tel" aria-describedby="phone-error">
+                                <span class="error-msg" id="phone-error" role="alert"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="location">Preferred Location <span class="required-mark" aria-hidden="true">*</span></label>
+                                <select id="location" class="form-control" aria-required="true" aria-describedby="location-error">
+                                    <option value="">Select location or remote...</option>
+                                    <option value="sweden">Studio A &bull; Landskrona (Sweden)</option>
+                                    <option value="usa">Studio B &bull; Huntsville, AL (USA)</option>
+                                    <option value="remote">Remote Mixing &amp; Mastering (Worldwide)</option>
+                                </select>
+                                <span class="error-msg" id="location-error" role="alert"></span>
+                            </div>
+                        </div>
+
+                        <!-- Row 3: Service & Date -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="service">Service Requested <span class="required-mark" aria-hidden="true">*</span></label>
+                                <select id="service" class="form-control" aria-required="true" aria-describedby="service-error">
+                                    <option value="">Select service...</option>
+                                    <option value="recording">Studio Vocal &amp; Instrument Tracking</option>
+                                    <option value="mixing">Stereo Stem Mixing &amp; Summing</option>
+                                    <option value="mastering">Mastering &amp; Dolby Atmos</option>
+                                    <option value="production">Full Production &amp; Sound Design</option>
+                                    <option value="education">Audio Tech Mentorship &amp; Education</option>
+                                    <option value="inquiry">General Studio Inquiry</option>
+                                </select>
+                                <span class="error-msg" id="service-error" role="alert"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sessionDate">Target Session Date <span class="optional-hint">(Optional)</span></label>
+                                <input type="date" id="sessionDate" class="form-control" aria-describedby="sessionDate-error">
+                                <span class="error-msg" id="sessionDate-error" role="alert"></span>
+                            </div>
+                        </div>
+
+                        <!-- Row 4: Project Details / Message -->
+                        <div class="form-group">
+                            <label for="message">Project Details &amp; Audio Links <span class="required-mark" aria-hidden="true">*</span></label>
+                            <textarea id="message" rows="4" class="form-control" placeholder="Describe track count, genre, release deadline, reference artists, or paste Dropbox/SoundCloud links..." aria-required="true" aria-describedby="message-error"></textarea>
+                            <span class="error-msg" id="message-error" role="alert"></span>
+                        </div>
+
+                        <!-- Row 5: Consent Checkbox -->
+                        <div class="checkbox-group">
+                            <label class="checkbox-label" for="consent">
+                                <input type="checkbox" id="consent" aria-required="true" aria-describedby="consent-error">
+                                <span>I consent to EQ Labs processing my contact details to reply to this session inquiry in accordance with our privacy practices. <span class="required-mark" aria-hidden="true">*</span></span>
+                            </label>
+                            <span class="error-msg" id="consent-error" role="alert"></span>
+                        </div>
+
+                        <!-- Row 6: Submit Button -->
+                        <div class="form-submit-row">
+                            <button type="submit" class="btn-primary btn-submit" id="submitBtn">
+                                <span>Send Booking Request</span>
+                                <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+                            </button>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">🔒 Direct encrypted studio dispatch</span>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right: Interactive Google Map & Studio Navigation -->
+                <div class="map-box fade-in">
+                    <div class="map-header">
+                        <h2>Studio Locations</h2>
+                        <p>Explore our transatlantic rooms. Switch between our Scandinavian acoustic lab and our American tracking hub.</p>
+                    </div>
+
+                    <!-- Location Switcher Tabs -->
+                    <div class="location-switcher" role="tablist" aria-label="Studio Locations">
+                        <button type="button" class="location-tab-btn active" data-location="sweden" role="tab" aria-selected="true" id="tab-sweden">
+                            🇸🇪 Studio A (Landskrona)
+                        </button>
+                        <button type="button" class="location-tab-btn" data-location="usa" role="tab" aria-selected="false" id="tab-usa">
+                            🇺🇸 Studio B (Huntsville)
+                        </button>
+                    </div>
+
+                    <!-- Active Studio Card Details -->
+                    <div id="activeLocationDetails" class="active-location-card">
+                        <div class="active-location-title" id="activeLocationTitle">Studio A &bull; Landskrona Audio Lab</div>
+                        <div class="active-location-meta" id="activeLocationMeta">
+                            <strong>📍 Address:</strong> Skeppsbron 14, 261 35 Landskrona, Sweden<br>
+                            <strong>🕒 Hours:</strong> Mon – Fri: 09:00 – 20:00 CET | Sat: By Appointment<br>
+                            <strong>🚆 Transit:</strong> 5 min from Landskrona Centralstation. Dedicated loading bay &amp; private artist parking.
+                        </div>
+                    </div>
+
+                    <!-- Responsive Google Map Frame -->
+                    <div class="map-embed-wrapper">
+                        <iframe 
+                            id="googleMapFrame" 
+                            src="https://maps.google.com/maps?q=Landskrona%20Sweden&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
+                            title="Google Map showing Studio A &bull; Landskrona Audio Lab"
+                            loading="lazy" 
+                            allowfullscreen 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <!-- Map Footer Action Links -->
+                    <div class="map-footer-links">
+                        <a id="directionsLink" href="https://www.google.com/maps/search/?api=1&amp;query=Landskrona+Sweden" target="_blank" rel="noopener noreferrer">
+                            🗺️ Open in Google Maps &rarr;
+                        </a>
+                        <span style="font-size: 0.85rem; color: var(--text-muted);">♿ Step-free studio access available</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ / PREPARATION ACCORDION -->
+        <section class="contact-faq-section">
+            <div class="about-section-header fade-in">
+                <h2>Session Preparation Guide</h2>
+                <p>Everything you need to know before attending your session or sending stems across the Atlantic.</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-card fade-in">
+                    <h4>🎛️ Stem Preparation Guidelines</h4>
+                    <p>Export all stems from bar 1 beat 1 (zero start) at 24-bit or 32-bit float / 44.1kHz or higher. Leave master bus limiters and clipping off to retain dynamic headroom.</p>
+                </div>
+
+                <div class="faq-card fade-in">
+                    <h4>🎙️ Attended vs. Remote Sessions</h4>
+                    <p>Both studios support attended tracking and mixing with artist lounges. For remote clients, we broadcast real-time lossless 32-bit audio streams via transatlantic low-latency links.</p>
+                </div>
+
+                <div class="faq-card fade-in">
+                    <h4>⚡ Revisions &amp; Turnaround Times</h4>
+                    <p>Initial mix passes are delivered in 3 to 5 business days. Every booking includes 2 rounds of stem revisions and mastered high-res WAV, MP3, and instrumental outputs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECOGNITION BANNER -->
+        <section id="recognition">
+            <div class="banner-content">
+                <p>Recognized by <strong>Billboard Magazine</strong> and <strong>Forbes</strong> for pioneering music-tech and direct-to-fan distribution.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-location">
+            <p>Landskrona, Sweden &bull; Huntsville, AL</p>
+        </div>
+        <div class="footer-social">
+            <p>Instagram: <a href="https://instagram.com/eqlabseu" target="_blank" rel="noopener noreferrer">@eqlabseu</a> &bull; <a href="https://instagram.com/eqlabshsv" target="_blank" rel="noopener noreferrer">@eqlabshsv</a></p>
+            <p>Web: <a href="https://eqla.se" target="_blank" rel="noopener noreferrer">eqla.se</a></p>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2026 EQ Labs (EQX). All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
