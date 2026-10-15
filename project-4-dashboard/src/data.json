@@ -6,7 +6,8 @@
     "status": "live",
     "tags": ["HTML5", "CSS3", "Responsive"],
     "description": "A clean online resume built to show semantic web structure, responsive layout, and accessibility.",
-    "link": "https://slowmotionsoundz.github.io/lexicon-classes/project1-cv/"
+    "link": "https://slowmotionsoundz.github.io/lexicon-classes/project1-cv/",
+    "github": "https://github.com/slowmotionsoundz/lexicon-classes/tree/main/project1-cv"
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "status": "live",
     "tags": ["JavaScript", "HTML/CSS", "Flexbox"],
     "description": "A website for an international music company and recording studio, with interactive sections and mobile-friendly design.",
-    "link": "https://slowmotionsoundz.github.io/lexicon-classes/project-2-business/"
+    "link": "https://slowmotionsoundz.github.io/lexicon-classes/project-2-business/",
+    "github": "https://github.com/slowmotionsoundz/lexicon-classes/tree/main/project-2-business"
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "status": "live",
     "tags": ["React", "Vite", "SPA"],
     "description": "A single-page React app that serves as a central home for my projects, coursework, and background.",
-    "link": "https://slowmotionsoundz.github.io/lexicon-classes/project-3-portfolio/"
+    "link": "https://slowmotionsoundz.github.io/lexicon-classes/project-3-portfolio/",
+    "github": "https://github.com/slowmotionsoundz/lexicon-classes/tree/main/project-3-portfolio"
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "status": "prototype",
     "tags": ["Math & Logic", "Tax Rules", "State"],
     "description": "A tool that handles recurring subscription payments and automatically figures out European sales tax (VAT) for different countries.",
-    "link": "#"
+    "link": "#",
+    "github": "https://github.com/slowmotionsoundz/lexicon-classes/tree/main/project-4-dashboard"
   },
   {
     "id": 5,
@@ -42,6 +46,7 @@
     "status": "prototype",
     "tags": ["Route Planning", "Scheduling"],
     "description": "A scheduling and route-planning tool for delivery drivers and work crews, inspired by my years in freight and utility dispatch.",
-    "link": "#"
+    "link": "#",
+    "github": "https://github.com/slowmotionsoundz/lexicon-classes"
   }
 ]

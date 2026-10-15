@@ -420,23 +420,46 @@ body {
 
 .card-footer {
   margin-top: auto;
-  padding-top: 10px;
+  padding-top: 12px;
   border-top: 1px solid var(--border-subtle);
+}
+
+.card-action-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .card-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   color: var(--text-main);
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 500;
   transition: color var(--transition);
 }
 
 .card-link:hover {
   color: var(--accent);
+}
+
+.card-link-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-soft);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 400;
+  transition: color var(--transition);
+}
+
+.card-link-secondary:hover {
+  color: var(--text-main);
 }
 
 .card-note {

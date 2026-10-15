@@ -22,19 +22,33 @@ function ProjectCard({ project }) {
       )}
 
       <div className="card-footer">
-        {isLive ? (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="card-link"
-          >
-            <span>View website</span>
-            <span className="arrow-icon" aria-hidden="true">&rarr;</span>
-          </a>
-        ) : (
-          <span className="card-note">In development (backend logic)</span>
-        )}
+        <div className="card-action-links">
+          {isLive && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card-link"
+            >
+              <span>Live demo</span>
+              <span className="arrow-icon" aria-hidden="true">&rarr;</span>
+            </a>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card-link-secondary"
+            >
+              <span>GitHub code</span>
+              <span className="arrow-icon" aria-hidden="true">&rarr;</span>
+            </a>
+          )}
+          {!isLive && !project.github && (
+            <span className="card-note">In development</span>
+          )}
+        </div>
       </div>
     </article>
   );
