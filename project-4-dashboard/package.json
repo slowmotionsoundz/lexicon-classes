@@ -3,13 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://slowmotionsoundz.github.io/project-4-dashboard/",
+  "homepage": "https://slowmotionsoundz.github.io/lexicon-classes/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && cd ../project-3-portfolio && npm run build && cd ../project-4-dashboard && cp -R ../project1-cv dist/ && cp -R ../project-2-business dist/ && cp -R ../project-3-portfolio/dist dist/project-3-portfolio",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
