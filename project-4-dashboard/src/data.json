@@ -31,6 +31,16 @@
   },
   {
     "id": 4,
+    "title": "EcoDrive Car Rental",
+    "type": "React",
+    "status": "live",
+    "tags": ["React 19", "Vite", "React Router", "Fleet Telemetry"],
+    "description": "An eco-friendly electric vehicle rental platform featuring EV fleet discovery, battery telemetry, instant booking workflows, and carbon offset tracking.",
+    "link": "https://slowmotionsoundz.github.io/ecodrive-car-rental/",
+    "github": "https://github.com/slowmotionsoundz/ecodrive-car-rental"
+  },
+  {
+    "id": 5,
     "title": "European VAT Billing Tool",
     "type": "Business Systems",
     "status": "prototype",
@@ -40,7 +50,7 @@
     "github": "https://github.com/slowmotionsoundz/lexicon-classes/tree/main/project-4-dashboard"
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Logistics Routing Engine",
     "type": "Business Systems",
     "status": "prototype",

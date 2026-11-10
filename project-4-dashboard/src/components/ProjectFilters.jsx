@@ -17,7 +17,7 @@ function ProjectFilters({
         <div className="search-input-wrapper">
           <input
             type="text"
-            placeholder="Search projects (e.g. React, VAT, resume)..."
+            placeholder="Search projects (e.g. React, EcoDrive, CV)..."
             className="search-bar"
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}

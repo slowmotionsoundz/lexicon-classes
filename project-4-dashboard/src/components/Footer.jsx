@@ -30,6 +30,11 @@ function Footer() {
                   Project 3: Portfolio Hub &rarr;
                 </a>
               </li>
+              <li>
+                <a href="https://slowmotionsoundz.github.io/ecodrive-car-rental/" target="_blank" rel="noopener noreferrer">
+                  EcoDrive: EV Car Rental &rarr;
+                </a>
+              </li>
             </ul>
           </div>
 
