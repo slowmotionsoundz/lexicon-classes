@@ -41,6 +41,16 @@
   },
   {
     "id": 5,
+    "title": "ClubLink Athlete Transit",
+    "type": "React & Business Systems",
+    "status": "live",
+    "tags": ["React 19", "TypeScript", "Firebase", "Stripe & Swish", "GPS Telemetry"],
+    "description": "Cross-border athlete transportation and logistics platform connecting Sweden and Denmark. Features live GPS driver dispatch, 7-day booking matrix, automated seat allocation, and dual Swish/Stripe billing.",
+    "link": "https://goclublink.com",
+    "github": "https://github.com/slowmotionsoundz/clublink-app"
+  },
+  {
+    "id": 6,
     "title": "European VAT Billing Tool",
     "type": "Business Systems",
     "status": "prototype",
@@ -50,7 +60,7 @@
     "github": "https://github.com/slowmotionsoundz/lexicon-classes/tree/main/project-4-dashboard"
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "Logistics Routing Engine",
     "type": "Business Systems",
     "status": "prototype",

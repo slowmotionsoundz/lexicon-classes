@@ -35,6 +35,11 @@ function Footer() {
                   EcoDrive: EV Car Rental &rarr;
                 </a>
               </li>
+              <li>
+                <a href="https://goclublink.com" target="_blank" rel="noopener noreferrer">
+                  ClubLink: Athlete Transit &rarr;
+                </a>
+              </li>
             </ul>
           </div>
 
