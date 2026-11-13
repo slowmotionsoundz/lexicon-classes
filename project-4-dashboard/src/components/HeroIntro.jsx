@@ -11,7 +11,7 @@ function HeroIntro() {
         </h1>
 
         <p className="hero-description">
-          I am an IT student learning modern web development. After 20+ years of running my own business (EQ Labs) and working in logistics, I bring real-world experience to writing clean, reliable software that solves practical problems.
+          IT student building clean, practical web applications with React, JavaScript, and modern tooling—combining technical craft with real-world operational experience.
         </p>
 
         <div className="hero-actions">

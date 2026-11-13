@@ -10,11 +10,30 @@ import SkillsSection from './components/SkillsSection';
 import Footer from './components/Footer';
 import './App.css';
 
+const VALID_TABS = ['cv', 'projects', 'skills'];
+
+function getTabFromHash() {
+  const hash = window.location.hash.replace('#', '');
+  return VALID_TABS.includes(hash) ? hash : 'cv';
+}
+
 function App() {
-  const [activeTab, setActiveTab] = useState('projects');
+  const [activeTab, setActiveTab] = useState(getTabFromHash);
   const [filter, setFilter] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [openAccordion, setOpenAccordion] = useState(1); // Keeps the first item open by default
+
+  // Sync activeTab with URL hash (#cv, #projects, #skills)
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    window.history.replaceState(null, '', `#${tab}`);
+  };
+
+  useEffect(() => {
+    const onHashChange = () => setActiveTab(getTabFromHash());
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
 
   // Persistent Dark Mode checking Local Storage on initial load
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -64,7 +83,7 @@ function App() {
         {/* NAVIGATION BAR */}
         <Navbar
           activeTab={activeTab}
-          onTabChange={setActiveTab}
+          onTabChange={handleTabChange}
           isDarkMode={isDarkMode}
           onToggleTheme={() => setIsDarkMode(!isDarkMode)}
         />

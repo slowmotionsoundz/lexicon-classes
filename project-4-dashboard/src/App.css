@@ -161,33 +161,33 @@ body {
    HERO / INTRO SECTION (CLEAN & AIRY)
    ========================================================================== */
 .dashboard-hero {
-  padding: 44px 36px 36px;
+  padding: 28px 36px 24px;
   border-bottom: 1px solid var(--border-light);
 }
 
 .hero-eyebrow {
   font-size: 0.85rem;
   color: var(--text-muted);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   letter-spacing: 0.02em;
 }
 
 .hero-title {
-  font-size: 1.85rem;
+  font-size: 1.7rem;
   font-weight: 650;
   color: var(--text-main);
-  line-height: 1.3;
-  margin-bottom: 14px;
+  line-height: 1.28;
+  margin-bottom: 10px;
   letter-spacing: -0.02em;
   max-width: 720px;
 }
 
 .hero-description {
-  font-size: 1rem;
+  font-size: 0.96rem;
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.6;
   max-width: 740px;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .hero-actions {
@@ -950,21 +950,23 @@ body {
   }
 
   .dashboard-hero {
-    padding: 22px 14px;
+    padding: 18px 14px;
   }
 
   .hero-title {
-    font-size: 1.25rem;
-    line-height: 1.35;
+    font-size: 1.2rem;
+    line-height: 1.3;
   }
 
   .hero-description {
     font-size: 0.88rem;
+    margin-bottom: 14px;
   }
 
   .hero-actions {
     width: 100%;
     flex-direction: column;
+    gap: 8px;
   }
 
   .hero-actions .cta-button {
@@ -974,6 +976,18 @@ body {
 
   .dashboard-content {
     padding: 20px 14px;
+  }
+
+  .cv-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cv-actions .action-button-subtle,
+  .cv-actions .action-button-primary {
+    width: 100%;
+    text-align: center;
   }
 
   .project-grid {
@@ -998,8 +1012,8 @@ body {
     padding: 14px 16px;
   }
 
-  .accordion-content {
-    padding: 0 16px 16px;
+  .accordion-body {
+    padding: 14px 16px 16px;
   }
 
   .card-action-links {

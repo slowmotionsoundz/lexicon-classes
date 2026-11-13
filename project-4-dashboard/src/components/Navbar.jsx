@@ -10,16 +10,16 @@ function Navbar({ activeTab, onTabChange, isDarkMode, onToggleTheme }) {
       <div className="nav-controls">
         <nav className="nav-buttons" aria-label="Main Navigation">
           <button
-            className={activeTab === 'projects' ? 'active-tab' : 'tab'}
-            onClick={() => onTabChange('projects')}
-          >
-            Projects
-          </button>
-          <button
             className={activeTab === 'cv' ? 'active-tab' : 'tab'}
             onClick={() => onTabChange('cv')}
           >
             CV &amp; Timeline
+          </button>
+          <button
+            className={activeTab === 'projects' ? 'active-tab' : 'tab'}
+            onClick={() => onTabChange('projects')}
+          >
+            Projects
           </button>
           <button
             className={activeTab === 'skills' ? 'active-tab' : 'tab'}
